@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
 
     private GameObject currentLevel;
     public int currentLevelIndex = 0;
+    
+    private const string HighestLevelKey = "HighestLevel";
 
     void Awake()
     {
@@ -18,6 +20,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        currentLevelIndex = PlayerPrefs.GetInt(HighestLevelKey, 0);
         LoadLevel(currentLevelIndex);
     }
 
@@ -43,7 +46,25 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        LoadLevel(currentLevelIndex);
+        // Save highest level reached
+        int savedHighest = PlayerPrefs.GetInt(HighestLevelKey, 0);
+
+        if (currentLevelIndex > savedHighest)
+        {
+            PlayerPrefs.SetInt(HighestLevelKey, currentLevelIndex);
+            PlayerPrefs.Save();
+        }
+
+        UIManager.Instance.TriggerGameWon();
+        //LoadLevel(currentLevelIndex);
+    }
+    
+    public void LoadNextLevel()
+    {
+        if (currentLevelIndex < levelData.levels.Length)
+        {
+            LoadLevel(currentLevelIndex);
+        }
     }
 
     public void CheckLevelComplete()

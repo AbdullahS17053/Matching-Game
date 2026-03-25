@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableSprite
   itemID: Grapes
-  snapDistance: 0.5
+  snapDistance: 0.7
   fadeDuration: 1
+  scaleDuration: 0.2
+  dragScale: 1.1
   nextTargetPrefab: {fileID: 0}
 --- !u!61 &6058276159679177474
 BoxCollider2D:
