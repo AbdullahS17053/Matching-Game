@@ -1,11 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup levelWonUI;
     [SerializeField] private GameObject winPanel;
     [SerializeField] TextMeshProUGUI levelNumberText;
+
+    [SerializeField] private GameObject nextBtn;
     
     [SerializeField] private bool isGame;
     public static UIManager Instance { get; private set; }
@@ -33,11 +36,14 @@ public class UIManager : MonoBehaviour
         levelWonUI.gameObject.SetActive(false);
     }
     
-    public void TriggerGameWon()
+    public void TriggerGameWon(bool nextLevel)
     {
         Debug.Log("Game Won!");
+        AudioController.Instance.PlaySound("Win");
         levelWonUI.gameObject.SetActive(true);
         //AudioController.Instance.PlaySound("Win");
+        nextBtn.SetActive(nextLevel);
+        
         levelNumberText.text = $"{LevelManager.instance.currentLevelIndex}";
         levelWonUI.LeanAlpha(1, 0.5f);
         //pauseBtn.SetActive(false);

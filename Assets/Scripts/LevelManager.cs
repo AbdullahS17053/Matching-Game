@@ -43,6 +43,7 @@ public class LevelManager : MonoBehaviour
         if (currentLevelIndex >= levelData.levels.Length)
         {
             Debug.Log("All Levels Completed!");
+            UIManager.Instance.TriggerGameWon(false);
             return;
         }
 
@@ -55,7 +56,7 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        UIManager.Instance.TriggerGameWon();
+        UIManager.Instance.TriggerGameWon(true);
         //LoadLevel(currentLevelIndex);
     }
     

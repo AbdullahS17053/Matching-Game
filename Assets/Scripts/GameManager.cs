@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Button playbtn;
     [SerializeField] private Button backBtn;
-    
+
     [Header("Tap Effect Settings")] [SerializeField]
     private float scaleAmount = 1.1f;
 
@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
         {
             backBtn.onClick.AddListener(OnBackButtonClicked);
         }
+        
+        AudioController.Instance.PlayMusic("BGM");
     }
 
     void OnPlayButtonClicked()
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
             }
         }));
     }
-    
+
     void OnBackButtonClicked()
     {
         StartCoroutine(PlayTapEffect(() =>
@@ -71,10 +73,10 @@ public class GameManager : MonoBehaviour
             SceneManager.sceneLoaded -= OnSceneLoaded; // IMPORTANT (avoid duplicate calls)
         }
     }
-    
+
     public IEnumerator PlayTapEffect(System.Action onComplete)
     {
-        //AudioController.Instance.PlaySound("Click");
+        AudioController.Instance.PlaySound("Click");
         GameObject clicked = null;
 
         if (EventSystem.current != null)

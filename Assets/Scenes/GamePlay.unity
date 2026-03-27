@@ -779,6 +779,7 @@ MonoBehaviour:
   levelWonUI: {fileID: 505226187}
   winPanel: {fileID: 6499179572874342549}
   levelNumberText: {fileID: 6499179573207236864}
+  nextBtn: {fileID: 6499179572149847037}
   isGame: 1
 --- !u!4 &989116017
 Transform:

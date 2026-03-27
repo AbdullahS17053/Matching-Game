@@ -101,6 +101,7 @@ public class DraggableSprite : MonoBehaviour
 
     void CheckDrop()
     {
+        AudioController.Instance.PlaySound("Drop");
         DropTarget[] targets = FindObjectsOfType<DropTarget>();
 
         DropTarget closestTarget = null;
@@ -161,7 +162,6 @@ public class DraggableSprite : MonoBehaviour
 
             // Ensure fully transparent at end
             targetRenderer.color = new Color(startColor.r, startColor.g, startColor.b, 0f);
-            completedRenderer.color = new Color(completedStartColor.r, completedStartColor.g, completedStartColor.b, 0f);
         }
 
         // Disable AFTER fade completes
