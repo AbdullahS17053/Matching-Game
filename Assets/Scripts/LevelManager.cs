@@ -10,8 +10,11 @@ public class LevelManager : MonoBehaviour
 
     private GameObject currentLevel;
     public int currentLevelIndex = 0;
+    private bool isReplay = false;
+    private int lastPlayedLevelIndex = 0;
     
     private const string HighestLevelKey = "HighestLevel";
+    private const string SelectedLevelKey = "SelectedLevel";
 
     void Awake()
     {
@@ -20,24 +23,40 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        currentLevelIndex = PlayerPrefs.GetInt(HighestLevelKey, 0);
+        if (PlayerPrefs.HasKey(SelectedLevelKey))
+        {
+            currentLevelIndex = PlayerPrefs.GetInt(SelectedLevelKey);
+        }
+        else
+        {
+            currentLevelIndex = PlayerPrefs.GetInt(HighestLevelKey, 0);
+        }
+
         LoadLevel(currentLevelIndex);
     }
 
     public void LoadLevel(int index)
     {
-        // Destroy old level
         if (currentLevel != null)
         {
             Destroy(currentLevel);
         }
 
-        // Spawn new level
+        lastPlayedLevelIndex = index;
         currentLevel = Instantiate(levelData.levels[index], levelParent);
     }
 
     public void NextLevel()
     {
+        // If replay, don't progress
+        if (isReplay)
+        {
+            isReplay = false;
+            //LoadLevel(lastPlayedLevelIndex);
+            UIManager.Instance.TriggerGameWon(true);
+            return;
+        }
+
         currentLevelIndex++;
 
         if (currentLevelIndex >= levelData.levels.Length)
@@ -47,7 +66,6 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        // Save highest level reached
         int savedHighest = PlayerPrefs.GetInt(HighestLevelKey, 0);
 
         if (currentLevelIndex > savedHighest)
@@ -57,7 +75,6 @@ public class LevelManager : MonoBehaviour
         }
 
         UIManager.Instance.TriggerGameWon(true);
-        //LoadLevel(currentLevelIndex);
     }
     
     public void LoadNextLevel()
@@ -66,6 +83,13 @@ public class LevelManager : MonoBehaviour
         {
             LoadLevel(currentLevelIndex);
         }
+    }
+    
+    public void ReplayLevel()
+    {
+        isReplay = true;
+        LoadLevel(lastPlayedLevelIndex);
+        UIManager.Instance.ClearUI();
     }
 
     public void CheckLevelComplete()

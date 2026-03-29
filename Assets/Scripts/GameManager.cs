@@ -1,14 +1,28 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Button playbtn;
+
+    [SerializeField] private Button nextBtn;
+    [SerializeField] private Button replayBtn;
     [SerializeField] private Button backBtn;
+    [SerializeField] private Button menuBtn;
+    
+    [Header("Level Selection Settings")]
+    [SerializeField] private LevelData levelData;
+    [SerializeField] private GameObject levelSelectionPanel;
+    [SerializeField] private Button levelBtnPrefab;
+    [SerializeField] private GameObject levelBtnParent;
+    [SerializeField] private bool isMenu;
+    
+    private const string SelectedLevelKey = "SelectedLevel";
 
     [Header("Tap Effect Settings")] [SerializeField]
     private float scaleAmount = 1.1f;
@@ -21,25 +35,68 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        if (playbtn)
+        if (nextBtn)
         {
-            playbtn.onClick.AddListener(OnPlayButtonClicked);
+            nextBtn.onClick.AddListener(OnNextButtonClicked);
         }
         if (backBtn)
         {
             backBtn.onClick.AddListener(OnBackButtonClicked);
         }
+        if (replayBtn)
+        {
+            replayBtn.onClick.AddListener(OnReplayButtonClicked);
+        }
+
+        if (menuBtn)
+        {
+            menuBtn.onClick.AddListener(OnMenuButtonClicked);
+        }
         
         AudioController.Instance.PlayMusic("BGM");
     }
 
-    void OnPlayButtonClicked()
+    private void Start()
+    {
+        if (isMenu)
+        {
+            SetUpLevels();
+        }
+    }
+
+    void SetUpLevels()
+    {
+        for (int i = 0; i < levelData.levels.Length; i++)
+        {
+            int index = i; // Capture the current index for the lambda
+            Button levelBtn = Instantiate(levelBtnPrefab, levelBtnParent.transform);
+            levelBtn.GetComponentInChildren<TextMeshProUGUI>().text = $"{i + 1}";
+            levelBtn.onClick.AddListener(() =>
+            {
+                StartCoroutine(PlayTapEffect(() =>
+                {
+                    Debug.Log($"Level {index + 1} Button Clicked!");
+
+                    // ✅ Save selected level
+                    PlayerPrefs.SetInt(SelectedLevelKey, index);
+                    PlayerPrefs.Save();
+
+                    SceneManager.LoadScene(1);
+                }));
+            });
+            if(index<=PlayerPrefs.GetInt("HighestLevel", 0))
+                levelBtn.interactable = true;
+            else
+                levelBtn.interactable = false;
+        }
+    }
+    void OnNextButtonClicked()
     {
         StartCoroutine(PlayTapEffect(() =>
         {
             Debug.Log("Play Button Clicked!");
             //AudioController.Instance.PlaySound("Click");
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+            if (!isMenu)
             {
                 LevelManager.instance.LoadNextLevel();
                 if (UIManager.Instance != null)
@@ -47,31 +104,43 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(1);
+                levelSelectionPanel.SetActive(true);
             }
         }));
     }
 
+    void OnReplayButtonClicked()
+    {
+        StartCoroutine(PlayTapEffect(() =>
+        {
+            Debug.Log("Replay Button Clicked!");
+            LevelManager.instance.ReplayLevel();
+        }));
+    }
     void OnBackButtonClicked()
     {
         StartCoroutine(PlayTapEffect(() =>
         {
             Debug.Log("Back Button Clicked!");
-            //AudioController.Instance.PlaySound("Click");
-            SceneManager.LoadScene(0);
+            if (isMenu)
+            {
+                levelSelectionPanel.SetActive(false);
+            }
+            else
+            {
+                SceneManager.LoadScene(0);
+            }
+            
         }));
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    
+    void OnMenuButtonClicked()
     {
-        if (scene.buildIndex == 1)
+        StartCoroutine(PlayTapEffect(() =>
         {
-            if (UIManager.Instance != null)
-            {
-                UIManager.Instance.ClearUI();
-            }
-
-            SceneManager.sceneLoaded -= OnSceneLoaded; // IMPORTANT (avoid duplicate calls)
-        }
+            Debug.Log("Menu Button Clicked!");
+            SceneManager.LoadScene(0);
+        }));
     }
 
     public IEnumerator PlayTapEffect(System.Action onComplete)
