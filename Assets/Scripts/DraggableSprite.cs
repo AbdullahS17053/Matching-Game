@@ -101,7 +101,6 @@ public class DraggableSprite : MonoBehaviour
 
     void CheckDrop()
     {
-        AudioController.Instance.PlaySound("Drop");
         DropTarget[] targets = FindObjectsOfType<DropTarget>();
 
         DropTarget closestTarget = null;
@@ -124,6 +123,7 @@ public class DraggableSprite : MonoBehaviour
         if (closestTarget != null && closestDistance <= snapDistance)
         {
             transform.position = closestTarget.transform.position;
+            AudioController.Instance.PlaySound("Correct");
             // Fade out the target sprite and handle deactivation
             StartCoroutine(FadeOutAndActivateNext(closestTarget, targets));
 
@@ -132,6 +132,7 @@ public class DraggableSprite : MonoBehaviour
         }
 
         // ❌ Otherwise reset
+        AudioController.Instance.PlaySound("Wrong");
         transform.position = startPosition;
     }
 

@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4410139986923365136, guid: 9a9867dbcd2537f45b74f487b2559a80, type: 3}
       propertyPath: m_Name
-      value: CircleSprite
+      value: RedCircle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -645,7 +645,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1644733555204997162, guid: 614a885993b04f444bef5cd76a0bb2d9, type: 3}
       propertyPath: m_Name
-      value: CircleTarget
+      value: RedCircle
       objectReference: {fileID: 0}
     - target: {fileID: 1644733555204997162, guid: 614a885993b04f444bef5cd76a0bb2d9, type: 3}
       propertyPath: m_IsActive

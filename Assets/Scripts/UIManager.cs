@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] TextMeshProUGUI levelNumberText;
 
+    [SerializeField] private CanvasGroup emoji;
+
     [SerializeField] private GameObject nextBtn;
     
     [SerializeField] private bool isGame;
@@ -19,6 +21,7 @@ public class UIManager : MonoBehaviour
 
         if (isGame)
         {
+            emoji.alpha = 0f;
             levelWonUI.alpha = 0f;
             winPanel.transform.localPosition = new Vector2(0, +Screen.height);
         }
@@ -26,6 +29,7 @@ public class UIManager : MonoBehaviour
     
     public void ClearUI()
     {
+        emoji.alpha = 0f;
         levelWonUI.alpha = 0f;
         winPanel.transform.localPosition = new Vector2(0, +Screen.height);
         Invoke(nameof(DisableWonUI), 0.5f);
@@ -33,9 +37,15 @@ public class UIManager : MonoBehaviour
 
     void DisableWonUI()
     {
+        emoji.gameObject.SetActive(false);
         levelWonUI.gameObject.SetActive(false);
     }
     
+    public void TriggerEmoji()
+    {
+        emoji.gameObject.SetActive(true);
+        emoji.LeanAlpha(1, 0.5f);
+    }
     public void TriggerGameWon(bool nextLevel)
     {
         Debug.Log("Game Won!");

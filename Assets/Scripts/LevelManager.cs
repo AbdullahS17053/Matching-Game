@@ -102,6 +102,7 @@ public class LevelManager : MonoBehaviour
         }
 
         Debug.Log("Level Complete!");
-        Invoke(nameof(NextLevel), 1f);
+        UIManager.Instance.TriggerEmoji();
+        Invoke(nameof(NextLevel), 2f);
     }
 }

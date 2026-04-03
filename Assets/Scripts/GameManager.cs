@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             menuBtn.onClick.AddListener(OnMenuButtonClicked);
         }
         
-        AudioController.Instance.PlayMusic("BGM");
+        //AudioController.Instance.PlayMusic("BGM");
     }
 
     private void Start()

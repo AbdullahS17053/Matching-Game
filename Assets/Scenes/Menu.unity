@@ -520,8 +520,13 @@ MonoBehaviour:
     baseVolume: 1
     loop: 0
     source: {fileID: 0}
-  - name: Drop
+  - name: Wrong
     clip: {fileID: 8300000, guid: c167564fd5a7da64692b376679b8a83e, type: 3}
+    baseVolume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: cea84def4208e0a489db6047194b14e9, type: 3}
     baseVolume: 1
     loop: 0
     source: {fileID: 0}
@@ -585,6 +590,7 @@ MonoBehaviour:
   levelWonUI: {fileID: 0}
   winPanel: {fileID: 0}
   levelNumberText: {fileID: 0}
+  emoji: {fileID: 0}
   nextBtn: {fileID: 0}
   isGame: 0
 --- !u!4 &802786163
@@ -748,6 +754,7 @@ MonoBehaviour:
   nextBtn: {fileID: 5811845799514093646}
   replayBtn: {fileID: 0}
   backBtn: {fileID: 218007131}
+  menuBtn: {fileID: 0}
   levelData: {fileID: 11400000, guid: 9b64c17703f7dc84aa9b9df5797bf2e3, type: 2}
   levelSelectionPanel: {fileID: 977009301}
   levelBtnPrefab: {fileID: 6796589483688539603, guid: d3ecca2f5497e904a9055d72094b5c71, type: 3}
