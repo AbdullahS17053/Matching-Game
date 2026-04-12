@@ -1096,7 +1096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   levelWonUI: {fileID: 505226187}
   winPanel: {fileID: 6499179572874342549}
-  levelNumberText: {fileID: 6499179573207236864}
   emoji: {fileID: 921910224}
   nextBtn: {fileID: 482090315}
   isGame: 1
@@ -1144,7 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfeabf854c7216d46852bd4360eb87e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  levelData: {fileID: 11400000, guid: 9b64c17703f7dc84aa9b9df5797bf2e3, type: 2}
+  levelData: {fileID: 11400000, guid: 0ae4c59c030b1f84d91f2b490001b606, type: 2}
   levelParent: {fileID: 1586791292}
   currentLevelIndex: 0
 --- !u!4 &1059915447
@@ -1658,6 +1657,7 @@ MonoBehaviour:
   levelData: {fileID: 0}
   levelSelectionPanel: {fileID: 0}
   levelBtnPrefab: {fileID: 0}
+  levelButtonSprites: []
   levelBtnParent: {fileID: 0}
   isMenu: 0
   scaleAmount: 1.1
@@ -3436,7 +3436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &6499179573280783349
 CanvasRenderer:
   m_ObjectHideFlags: 0

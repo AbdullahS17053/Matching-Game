@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LevelData levelData;
     [SerializeField] private GameObject levelSelectionPanel;
     [SerializeField] private Button levelBtnPrefab;
+    [SerializeField] private Sprite[] levelButtonSprites;
     [SerializeField] private GameObject levelBtnParent;
     [SerializeField] private bool isMenu;
     
@@ -66,28 +67,41 @@ public class GameManager : MonoBehaviour
 
     void SetUpLevels()
     {
-        for (int i = 0; i < levelData.levels.Length; i++)
+        int levelsPerButton = 4;
+        int totalButtons = 8;
+
+        for (int i = 0; i < totalButtons; i++)
         {
-            int index = i; // Capture the current index for the lambda
+            int index = i;
+
             Button levelBtn = Instantiate(levelBtnPrefab, levelBtnParent.transform);
-            levelBtn.GetComponentInChildren<TextMeshProUGUI>().text = $"{i + 1}";
+
+            // ✅ Set sprite
+            Image btnImage = levelBtn.GetComponent<Image>();
+            if (btnImage != null && levelButtonSprites.Length > index)
+            {
+                btnImage.sprite = levelButtonSprites[index];
+            }
+
             levelBtn.onClick.AddListener(() =>
             {
                 StartCoroutine(PlayTapEffect(() =>
                 {
-                    Debug.Log($"Level {index + 1} Button Clicked!");
+                    int startLevel = index * levelsPerButton;
+                    int endLevel = startLevel + levelsPerButton - 1;
 
-                    // ✅ Save selected level
-                    PlayerPrefs.SetInt(SelectedLevelKey, index);
+                    int randomLevel = UnityEngine.Random.Range(startLevel, endLevel + 1);
+
+                    Debug.Log($"Button {index + 1} -> Random Level: {randomLevel}");
+
+                    PlayerPrefs.SetInt(SelectedLevelKey, randomLevel);
                     PlayerPrefs.Save();
 
                     SceneManager.LoadScene(1);
                 }));
             });
-            if(index<=PlayerPrefs.GetInt("HighestLevel", 0))
-                levelBtn.interactable = true;
-            else
-                levelBtn.interactable = false;
+
+            levelBtn.interactable = true;
         }
     }
     void OnNextButtonClicked()

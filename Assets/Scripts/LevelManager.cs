@@ -12,8 +12,6 @@ public class LevelManager : MonoBehaviour
     public int currentLevelIndex = 0;
     private bool isReplay = false;
     private int lastPlayedLevelIndex = 0;
-    
-    private const string HighestLevelKey = "HighestLevel";
     private const string SelectedLevelKey = "SelectedLevel";
 
     void Awake()
@@ -26,10 +24,6 @@ public class LevelManager : MonoBehaviour
         if (PlayerPrefs.HasKey(SelectedLevelKey))
         {
             currentLevelIndex = PlayerPrefs.GetInt(SelectedLevelKey);
-        }
-        else
-        {
-            currentLevelIndex = PlayerPrefs.GetInt(HighestLevelKey, 0);
         }
 
         LoadLevel(currentLevelIndex);
@@ -48,41 +42,44 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        // If replay, don't progress
         if (isReplay)
         {
             isReplay = false;
-            //LoadLevel(lastPlayedLevelIndex);
-            UIManager.Instance.TriggerGameWon(true);
+            UIManager.Instance.TriggerGameWon();
             return;
         }
 
-        currentLevelIndex++;
+        int levelsPerGroup = 4;
 
-        if (currentLevelIndex >= levelData.levels.Length)
+        int groupStart = (currentLevelIndex / levelsPerGroup) * levelsPerGroup;
+        int groupEnd = groupStart + levelsPerGroup - 1;
+
+        int newLevel;
+
+        // If only one level (safety, though not your case)
+        if (groupStart == groupEnd)
         {
-            Debug.Log("All Levels Completed!");
-            UIManager.Instance.TriggerGameWon(false);
-            return;
+            newLevel = groupStart;
+        }
+        else
+        {
+            do
+            {
+                newLevel = Random.Range(groupStart, groupEnd + 1);
+            }
+            while (newLevel == currentLevelIndex); // ❌ avoid same level
         }
 
-        int savedHighest = PlayerPrefs.GetInt(HighestLevelKey, 0);
+        currentLevelIndex = newLevel;
 
-        if (currentLevelIndex > savedHighest)
-        {
-            PlayerPrefs.SetInt(HighestLevelKey, currentLevelIndex);
-            PlayerPrefs.Save();
-        }
+        Debug.Log($"Next Random Level: {currentLevelIndex}");
 
-        UIManager.Instance.TriggerGameWon(true);
+        UIManager.Instance.TriggerGameWon();
     }
     
     public void LoadNextLevel()
     {
-        if (currentLevelIndex < levelData.levels.Length)
-        {
-            LoadLevel(currentLevelIndex);
-        }
+        LoadLevel(currentLevelIndex);
     }
     
     public void ReplayLevel()

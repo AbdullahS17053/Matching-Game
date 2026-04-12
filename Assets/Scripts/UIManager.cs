@@ -6,7 +6,6 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup levelWonUI;
     [SerializeField] private GameObject winPanel;
-    [SerializeField] TextMeshProUGUI levelNumberText;
 
     [SerializeField] private CanvasGroup emoji;
 
@@ -46,15 +45,13 @@ public class UIManager : MonoBehaviour
         emoji.gameObject.SetActive(true);
         emoji.LeanAlpha(1, 0.5f);
     }
-    public void TriggerGameWon(bool nextLevel)
+    public void TriggerGameWon()
     {
         Debug.Log("Game Won!");
         AudioController.Instance.PlaySound("Win");
         levelWonUI.gameObject.SetActive(true);
         //AudioController.Instance.PlaySound("Win");
-        nextBtn.SetActive(nextLevel);
         
-        levelNumberText.text = $"{LevelManager.instance.currentLevelIndex}";
         levelWonUI.LeanAlpha(1, 0.5f);
         //pauseBtn.SetActive(false);
         winPanel.LeanMoveLocalY(0, 0.5f).setEaseOutExpo().delay = 0.1f;
