@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
         Invoke(nameof(DisableWonUI), 0.5f);
     }
 
-    void DisableWonUI()
+    public void DisableWonUI()
     {
         emoji.gameObject.SetActive(false);
         levelWonUI.gameObject.SetActive(false);

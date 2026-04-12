@@ -42,10 +42,12 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
+        AudioController.Instance.PlaySound("Win");
+
         if (isReplay)
         {
             isReplay = false;
-            UIManager.Instance.TriggerGameWon();
+            LoadNextLevel();
             return;
         }
 
@@ -56,37 +58,31 @@ public class LevelManager : MonoBehaviour
 
         int newLevel;
 
-        // If only one level (safety, though not your case)
-        if (groupStart == groupEnd)
+        do
         {
-            newLevel = groupStart;
+            newLevel = Random.Range(groupStart, groupEnd + 1);
         }
-        else
-        {
-            do
-            {
-                newLevel = Random.Range(groupStart, groupEnd + 1);
-            }
-            while (newLevel == currentLevelIndex); // ❌ avoid same level
-        }
+        while (newLevel == currentLevelIndex);
 
         currentLevelIndex = newLevel;
 
         Debug.Log($"Next Random Level: {currentLevelIndex}");
 
-        UIManager.Instance.TriggerGameWon();
+        // ✅ Directly load next level (no UI call)
+        LoadNextLevel();
     }
     
     public void LoadNextLevel()
     {
+        UIManager.Instance.ClearUI();
         LoadLevel(currentLevelIndex);
     }
     
     public void ReplayLevel()
     {
         isReplay = true;
-        LoadLevel(lastPlayedLevelIndex);
         UIManager.Instance.ClearUI();
+        LoadLevel(lastPlayedLevelIndex);
     }
 
     public void CheckLevelComplete()
