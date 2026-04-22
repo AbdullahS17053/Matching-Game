@@ -400,12 +400,12 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Correct
-    clip: {fileID: 8300000, guid: cea84def4208e0a489db6047194b14e9, type: 3}
+    clip: {fileID: 8300000, guid: d821ea93f97ad28469a7ee7d5a16d4c9, type: 3}
     baseVolume: 1
     loop: 0
     source: {fileID: 0}
   - name: Win
-    clip: {fileID: 8300000, guid: bd74487345eac2f40835cf6b537dc723, type: 3}
+    clip: {fileID: 8300000, guid: e5d1c9c8e768d6842906cbc1d5deedf3, type: 3}
     baseVolume: 1
     loop: 0
     source: {fileID: 0}

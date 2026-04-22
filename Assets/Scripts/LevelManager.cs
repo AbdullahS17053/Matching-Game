@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    
+    [Header("Background Color Settings")]
+    [SerializeField] private Image bgPanel; // your background UI Image
+    [SerializeField] private Color[] categoryColors; // assign in inspector
 
     public LevelData levelData;
 
@@ -26,9 +31,22 @@ public class LevelManager : MonoBehaviour
             currentLevelIndex = PlayerPrefs.GetInt(SelectedLevelKey);
         }
 
+        ApplyCategoryColor(currentLevelIndex);
         LoadLevel(currentLevelIndex);
     }
 
+    void ApplyCategoryColor(int levelIndex)
+    {
+        int levelsPerCategory = 4;
+
+        int categoryIndex = levelIndex / levelsPerCategory;
+
+        if (categoryColors != null && categoryColors.Length > 0)
+        {
+            categoryIndex = Mathf.Clamp(categoryIndex, 0, categoryColors.Length - 1);
+            bgPanel.color = categoryColors[categoryIndex];
+        }
+    }
     public void LoadLevel(int index)
     {
         if (currentLevel != null)
@@ -42,7 +60,7 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        AudioController.Instance.PlaySound("Win");
+        //AudioController.Instance.PlaySound("Win");
 
         if (isReplay)
         {

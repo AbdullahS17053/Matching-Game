@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
     
     public void TriggerEmoji()
     {
+        AudioController.Instance.PlaySound("Win");
         emoji.gameObject.SetActive(true);
         emoji.LeanAlpha(1, 0.5f);
     }
