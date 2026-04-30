@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableSprite
   itemID: Elephant
-  snapDistance: 0.7
+  snapDistance: 6
   fadeDuration: 1
   scaleDuration: 0.2
   dragScale: 1.1

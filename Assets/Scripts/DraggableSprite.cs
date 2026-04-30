@@ -5,7 +5,7 @@ public class DraggableSprite : MonoBehaviour
 {
     public string itemID;
 
-    [Header("Snap Settings")] [SerializeField] float snapDistance = 0.7f; // Adjust in Inspector
+    [Header("Snap Settings")] [SerializeField] float snapDistance = 2f; // Adjust in Inspector
 
     [Header("Fade Settings")] [SerializeField] float fadeDuration = 1f; // Duration of fade out animation
 
