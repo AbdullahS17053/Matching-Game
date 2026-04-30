@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 3613406182980907957, guid: 238a494243fcde7499d809eb753145fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6808505711557643237, guid: 238a494243fcde7499d809eb753145fb, type: 3}
       propertyPath: nextTargetPrefab
       value: 
@@ -425,11 +429,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7438183568857927450, guid: 15814801044ec9447939bcf7c52e862a, type: 3}
   m_PrefabInstance: {fileID: 4650431037483787889}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6274639607756170138 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1700769773870843371, guid: 15814801044ec9447939bcf7c52e862a, type: 3}
-  m_PrefabInstance: {fileID: 4650431037483787889}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5155641398698871146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 3618700014594217360, guid: d9cef2b8a142eab4684ef02cc8f7c12c, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 6274639607756170138}
+      objectReference: {fileID: 8017984204633495725}
     - target: {fileID: 7567123175824217415, guid: d9cef2b8a142eab4684ef02cc8f7c12c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15

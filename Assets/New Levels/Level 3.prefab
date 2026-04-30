@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenAppleSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 5152104806718612084, guid: 9850da61fc09c4343ad543660d62e430, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -309,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 385902713252424024, guid: 3024d887c09800340827f85818339427, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 2241658750005396229}
+      objectReference: {fileID: 0}
     - target: {fileID: 3848905634653879028, guid: 3024d887c09800340827f85818339427, type: 3}
       propertyPath: m_Name
       value: AppleSprite
@@ -425,11 +429,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b8c42f73a8c974e82a8ad91de65b35, type: 3}
---- !u!1 &2241658750005396229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8920805544552642576, guid: c7b8c42f73a8c974e82a8ad91de65b35, type: 3}
-  m_PrefabInstance: {fileID: 7266251927662557973}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7268248644915955885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2506901539320760, guid: c7b8c42f73a8c974e82a8ad91de65b35, type: 3}

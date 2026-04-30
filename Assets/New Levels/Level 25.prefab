@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedCircleSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 4410139986923365136, guid: 9a9867dbcd2537f45b74f487b2559a80, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -287,6 +291,10 @@ PrefabInstance:
     - target: {fileID: 7917043966394459956, guid: ba2e895e02810a74184e6b9d305efef9, type: 3}
       propertyPath: m_Name
       value: ParallelogramSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917043966394459956, guid: ba2e895e02810a74184e6b9d305efef9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8804678817080441746, guid: ba2e895e02810a74184e6b9d305efef9, type: 3}
       propertyPath: nextTargetPrefab
@@ -429,6 +437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoonSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 7718107302929506600, guid: b0ceb0b9cda20c441b6a718a8a192c0d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -450,7 +462,7 @@ PrefabInstance:
     - target: {fileID: 432089979470275306, guid: b43a2e3dd0866e946b15d843cbe47d37, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 1965055719438732246}
+      objectReference: {fileID: 0}
     - target: {fileID: 5976330107347995275, guid: b43a2e3dd0866e946b15d843cbe47d37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -628,11 +640,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb2a1df7e467bc448bd99025b47ea7b, type: 3}
---- !u!1 &1965055719438732246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8550775034753535378, guid: 3bb2a1df7e467bc448bd99025b47ea7b, type: 3}
-  m_PrefabInstance: {fileID: 7921606709401716292}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4037518387705517090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6189941227093627494, guid: 3bb2a1df7e467bc448bd99025b47ea7b, type: 3}

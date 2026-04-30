@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobileSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 5776107529684110838, guid: 78f77ad25e12e574c8ea51851cff5f0c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -294,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437002791332093665, guid: 6edcef5d92f429740a000a26af309e48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -587,6 +591,10 @@ PrefabInstance:
     - target: {fileID: 1270057561111945525, guid: 37abdaaacea455a4f8a083508c5c891c, type: 3}
       propertyPath: m_Name
       value: MobileTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270057561111945525, guid: 37abdaaacea455a4f8a083508c5c891c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4258898100901615226, guid: 37abdaaacea455a4f8a083508c5c891c, type: 3}
       propertyPath: m_LocalPosition.x

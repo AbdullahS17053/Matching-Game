@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoodleSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 4237119645465954617, guid: 6a45ff0a87a670e45968b9a04b8279c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -220,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 7059722966911057824, guid: ceeb9ed2dad72324a8a187cbf482deb4, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 7281521517815831427}
+      objectReference: {fileID: 0}
     - target: {fileID: 8171159935502967638, guid: ceeb9ed2dad72324a8a187cbf482deb4, type: 3}
       propertyPath: m_Name
       value: DollSprite
@@ -286,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 7329530980723083943, guid: d08eac20362038449b40c8a1708b3a27, type: 3}
       propertyPath: m_Name
       value: TeddySprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329530980723083943, guid: d08eac20362038449b40c8a1708b3a27, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -434,11 +442,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9076884216336245516, guid: 63fbb4d0044945a4fa475772540d977c, type: 3}
   m_PrefabInstance: {fileID: 5902967878605440231}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7281521517815831427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3811918025269387108, guid: 63fbb4d0044945a4fa475772540d977c, type: 3}
-  m_PrefabInstance: {fileID: 5902967878605440231}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7111308981180361583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,6 +586,10 @@ PrefabInstance:
     - target: {fileID: 705978485542957852, guid: 4d9031b800126014fa4618c65999620c, type: 3}
       propertyPath: m_Name
       value: RobotSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 705978485542957852, guid: 4d9031b800126014fa4618c65999620c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4603886346361070546, guid: 4d9031b800126014fa4618c65999620c, type: 3}
       propertyPath: m_LocalPosition.x

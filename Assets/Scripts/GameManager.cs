@@ -94,7 +94,8 @@ public class GameManager : MonoBehaviour
 
                     Debug.Log($"Button {index + 1} -> Random Level: {randomLevel}");
 
-                    PlayerPrefs.SetInt(SelectedLevelKey, randomLevel);
+                    //PlayerPrefs.SetInt(SelectedLevelKey, randomLevel);
+                    PlayerPrefs.SetInt(SelectedLevelKey, startLevel);
                     PlayerPrefs.Save();
 
                     SceneManager.LoadScene(1);

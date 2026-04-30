@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 876804177476418194, guid: 644d3291b3ef2484b8c32e2f18666087, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 6207198997610862464}
+      objectReference: {fileID: 4299316584072976991}
     - target: {fileID: 3192554008632337321, guid: 644d3291b3ef2484b8c32e2f18666087, type: 3}
       propertyPath: m_Name
       value: CricketBallSprite
@@ -296,11 +296,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 883eda08f7b4da04bb826117b8b8c350, type: 3}
---- !u!1 &6207198997610862464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7605358248064520561, guid: 883eda08f7b4da04bb826117b8b8c350, type: 3}
-  m_PrefabInstance: {fileID: 4589114771214206705}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6724907325000053734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7132685882581349655, guid: 883eda08f7b4da04bb826117b8b8c350, type: 3}
@@ -454,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 2387746408528951598, guid: 5e05e07d51f3b124995a5fc28298317a, type: 3}
       propertyPath: m_Name
       value: BasketballSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387746408528951598, guid: 5e05e07d51f3b124995a5fc28298317a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8955787770613002563, guid: 5e05e07d51f3b124995a5fc28298317a, type: 3}
       propertyPath: m_LocalPosition.x

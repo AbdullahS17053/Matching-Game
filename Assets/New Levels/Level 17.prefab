@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaptopSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 5607737897474994364, guid: 807a0adf800da504cbfdf04ae53c1e97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6307918470761189466, guid: 807a0adf800da504cbfdf04ae53c1e97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -287,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 2769188953912715792, guid: 02b2765fe4abf574995c090d5ecbb68f, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 1083654527097138391}
+      objectReference: {fileID: 0}
     - target: {fileID: 2853341345243452393, guid: 02b2765fe4abf574995c090d5ecbb68f, type: 3}
       propertyPath: m_Name
       value: ComputerSprite
@@ -425,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConsoleSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 6206765289142401361, guid: 1754e3f5bc3a2b44fa67e3ee30d0dccd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9145514104257470126, guid: 1754e3f5bc3a2b44fa67e3ee30d0dccd, type: 3}
       propertyPath: nextTargetPrefab
       value: 
@@ -553,6 +561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeadphonesSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 7631993225819645038, guid: 0307ae44b5135e54491f88d889edd0a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7952931192674176597, guid: 0307ae44b5135e54491f88d889edd0a2, type: 3}
       propertyPath: nextTargetPrefab
       value: 
@@ -628,11 +640,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6edcef5d92f429740a000a26af309e48, type: 3}
---- !u!1 &1083654527097138391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8437002791332093665, guid: 6edcef5d92f429740a000a26af309e48, type: 3}
-  m_PrefabInstance: {fileID: 8799940605855298102}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8718203500423462677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 207988841699921187, guid: 6edcef5d92f429740a000a26af309e48, type: 3}

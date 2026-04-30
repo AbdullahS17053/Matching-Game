@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RhombusSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 98185338795361611, guid: 0a2a53a5485002647b32d0af3157c037, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2240845950377210244, guid: 0a2a53a5485002647b32d0af3157c037, type: 3}
       propertyPath: nextTargetPrefab
       value: 
@@ -230,11 +234,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458dd34eb5e33844e8deaa34f8ec47b2, type: 3}
---- !u!1 &946375433698500117 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4425352029966316441, guid: 458dd34eb5e33844e8deaa34f8ec47b2, type: 3}
-  m_PrefabInstance: {fileID: 3479084901040614796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5667869194176939649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142413107891055373, guid: 458dd34eb5e33844e8deaa34f8ec47b2, type: 3}
@@ -583,7 +582,7 @@ PrefabInstance:
     - target: {fileID: 521255838428419581, guid: d374b5253c78c7d408423b705e2f6877, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 946375433698500117}
+      objectReference: {fileID: 517914693566384270}
     - target: {fileID: 4370441735533363073, guid: d374b5253c78c7d408423b705e2f6877, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15

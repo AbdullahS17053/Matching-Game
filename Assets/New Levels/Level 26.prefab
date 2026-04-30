@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 8922501427491705252, guid: a92ad0b44e224fb43a0dad73dce3c65b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -420,6 +424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 4948009685742838140, guid: d374b5253c78c7d408423b705e2f6877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -496,11 +504,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2300088830004075204, guid: 584c81a71c86afb42bd52acda383ca29, type: 3}
   m_PrefabInstance: {fileID: 6186377305137548530}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6371795404317619318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 988337021562026116, guid: 584c81a71c86afb42bd52acda383ca29, type: 3}
-  m_PrefabInstance: {fileID: 6186377305137548530}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6757289926645484695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -512,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 1097926890938866774, guid: 20e5e690d63919c4790cd61f42cd3943, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 6371795404317619318}
+      objectReference: {fileID: 0}
     - target: {fileID: 1120345701573007633, guid: 20e5e690d63919c4790cd61f42cd3943, type: 3}
       propertyPath: m_Name
       value: SquareSprite

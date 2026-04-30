@@ -158,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 7861056841711197161, guid: 6afaa94fc845c3a469455533f3eb9b96, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 1388513854089865182}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElephantSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 3250870418486399684, guid: f3bb7cc8dab5d6d46a1fcbce6d465599, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4877263865165042725, guid: f3bb7cc8dab5d6d46a1fcbce6d465599, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -450,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 1677679726309422767, guid: fe80573b0c32cc24da6828991625f115, type: 3}
       propertyPath: m_Name
       value: CowSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677679726309422767, guid: fe80573b0c32cc24da6828991625f115, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5282327302913939271, guid: fe80573b0c32cc24da6828991625f115, type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,11 +574,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87bddfe3eefba944d82a81c1a910aa80, type: 3}
---- !u!1 &1388513854089865182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8179988161396300158, guid: 87bddfe3eefba944d82a81c1a910aa80, type: 3}
-  m_PrefabInstance: {fileID: 7116208695390863008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6854416456037365721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4458033021054060921, guid: 87bddfe3eefba944d82a81c1a910aa80, type: 3}
@@ -587,6 +590,10 @@ PrefabInstance:
     - target: {fileID: 720253258592213435, guid: ce990b22f1f1fce458608da2fcab9e6e, type: 3}
       propertyPath: m_Name
       value: DogSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 720253258592213435, guid: ce990b22f1f1fce458608da2fcab9e6e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1761515120260830702, guid: ce990b22f1f1fce458608da2fcab9e6e, type: 3}
       propertyPath: m_LocalPosition.x

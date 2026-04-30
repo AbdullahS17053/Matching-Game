@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -82,12 +83,21 @@ public class LevelManager : MonoBehaviour
         }
         while (newLevel == currentLevelIndex);
 
-        currentLevelIndex = newLevel;
+        if (currentLevelIndex < groupEnd)
+        {
+            newLevel = currentLevelIndex + 1;
+            currentLevelIndex = newLevel;
 
-        Debug.Log($"Next Random Level: {currentLevelIndex}");
+            Debug.Log($"Next Random Level: {currentLevelIndex}");
 
-        // ✅ Directly load next level (no UI call)
-        LoadNextLevel();
+            // ✅ Directly load next level (no UI call)
+            LoadNextLevel();
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+        
     }
     
     public void LoadNextLevel()

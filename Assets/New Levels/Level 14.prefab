@@ -251,7 +251,7 @@ PrefabInstance:
     - target: {fileID: 2340478091156020953, guid: 4278a0f4ecfe8f54693da0504bb3671a, type: 3}
       propertyPath: nextTargetPrefab
       value: 
-      objectReference: {fileID: 2545768446942819880}
+      objectReference: {fileID: 0}
     - target: {fileID: 2604669021440833068, guid: 4278a0f4ecfe8f54693da0504bb3671a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -362,6 +362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParrotSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 6931199852315848655, guid: f26ce069c5e3caa489282b410a3d7a1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -433,11 +437,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f39ba5737e48f42bf39eab80a9185c, type: 3}
---- !u!1 &2545768446942819880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7510546182849769204, guid: 56f39ba5737e48f42bf39eab80a9185c, type: 3}
-  m_PrefabInstance: {fileID: 5435478749925710044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7930627446444666814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2693588787045185378, guid: 56f39ba5737e48f42bf39eab80a9185c, type: 3}
@@ -525,6 +524,10 @@ PrefabInstance:
     - target: {fileID: 5152758176134092643, guid: d69c5e6b171da4e49acc895b3d7f4061, type: 3}
       propertyPath: m_Name
       value: PenguinSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152758176134092643, guid: d69c5e6b171da4e49acc895b3d7f4061, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8358891791537578198, guid: d69c5e6b171da4e49acc895b3d7f4061, type: 3}
       propertyPath: m_LocalPosition.x
