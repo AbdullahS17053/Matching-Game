@@ -10,7 +10,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Image bgPanel; // your background UI Image
     [SerializeField] private Color[] categoryColors; // assign in inspector
 
-    public LevelData levelData;
+    public LevelData[] levelData;
+    private int randomLevelDataIndex;
 
     public Transform levelParent; // empty object to keep hierarchy clean
 
@@ -33,6 +34,7 @@ public class LevelManager : MonoBehaviour
         }
 
         ApplyCategoryColor(currentLevelIndex);
+        randomLevelDataIndex = Random.Range(0, levelData.Length);
         LoadLevel(currentLevelIndex);
     }
 
@@ -54,9 +56,9 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(currentLevel);
         }
-
+        
         lastPlayedLevelIndex = index;
-        currentLevel = Instantiate(levelData.levels[index], levelParent);
+        currentLevel = Instantiate(levelData[randomLevelDataIndex].levels[index], levelParent);
     }
 
     public void NextLevel()
