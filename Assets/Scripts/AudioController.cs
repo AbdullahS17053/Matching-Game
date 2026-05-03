@@ -46,6 +46,8 @@ public class AudioController : MonoBehaviour
     private const string SoundVolumeKey = "GlobalSoundVolume";
     private const string MusicVolumeKey = "GlobalMusicVolume";
 
+    [HideInInspector] public bool hasPlayed;
+
     private void Awake()
     {
         if (Instance == null)

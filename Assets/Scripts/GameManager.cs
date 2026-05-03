@@ -62,6 +62,11 @@ public class GameManager : MonoBehaviour
         if (isMenu)
         {
             SetUpLevels();
+            levelSelectionPanel.SetActive(AudioController.Instance.hasPlayed);
+        }
+        else
+        {
+            AudioController.Instance.hasPlayed = true;
         }
     }
 
